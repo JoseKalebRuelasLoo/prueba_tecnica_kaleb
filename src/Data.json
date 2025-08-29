@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "nombre": "Producto 1",
+    "descripcion": "Descripción del producto 1",
+    "precio": 10.0,
+    "categoria": "Categoria 1",
+    "imagen_principal": "imagen1.jpg",
+    "imagenes": [
+      {
+        "id": 1,
+        "url": "imagen1_1.jpg",
+        "orden": 0
+      }
+    ],
+    "calificacion": 4.5,
+    "stock": 100,
+    "oferta": false,
+    "descuento": 0.0,
+    "sku": "SKU1",
+    "fecha_creacion": "2024-01-01T00:00:00.000Z",
+    "activo": true
+  },
+  {
+    "id": 2,
+    "nombre": "Producto 2",
+    "descripcion": "Descripción del producto 2",
+    "precio": 20.0,
+    "categoria": "Categoria 2",
+    "imagen_principal": "imagen2.jpg",
+    "imagenes": [
+      {
+        "id": 2,
+        "url": "imagen2_1.jpg",
+        "orden": 0
+      }
+    ],
+    "calificacion": 4.0,
+    "stock": 90,
+    "oferta": true,
+    "descuento": 2.0,
+    "sku": "SKU2",
+    "fecha_creacion": "2024-01-02T00:00:00.000Z",
+    "activo": true
+  },
+  {
+    "id": 3,
+    "nombre": "Producto 3",
+    "descripcion": "Descripción del producto 3",
+    "precio": 30.0,
+    "categoria": "Categoria 3",
+    "imagen_principal": "imagen3.jpg",
+    "imagenes": [
+      {
+        "id": 3,
+        "url": "imagen3_1.jpg",
+        "orden": 0
+      }
+    ],
+    "calificacion": 3.5,
+    "stock": 80,
+    "oferta": false,
+    "descuento": 0.0,
+    "sku": "SKU3",
+    "fecha_creacion": "2024-01-03T00:00:00.000Z",
+    "activo": true
+  },
+  {
+    "id": 4,
+    "nombre": "Producto 4",
+    "descripcion": "Descripción del producto 4",
+    "precio": 40.0,
+    "categoria": "Categoria 2",
+    "imagen_principal": "imagen4.jpg",
+    "imagenes": [
+      {
+        "id": 4,
+        "url": "imagen4_1.jpg",
+        "orden": 0
+      }
+    ],
+    "calificacion": 5.0,
+    "stock": 70,
+    "oferta": true,
+    "descuento": 5.0,
+    "sku": "SKU4",
+    "fecha_creacion": "2024-01-04T00:00:00.000Z",
+    "activo": true
+  },
+  {
+    "id": 5,
+    "nombre": "Producto 5",
+    "descripcion": "Descripción del producto 5",
+    "precio": 50.0,
+    "categoria": "Categoria 1",
+    "imagen_principal": "imagen5.jpg",
+    "imagenes": [
+      {
+        "id": 5,
+        "url": "imagen5_1.jpg",
+        "orden": 0
+      }
+    ],
+    "calificacion": 4.2,
+    "stock": 60,
+    "oferta": false,
+    "descuento": 0.0,
+    "sku": "SKU5",
+    "fecha_creacion": "2024-01-05T00:00:00.000Z",
+    "activo": true
+  },
+  {
+    "id": 6,
+    "nombre": "Producto 6",
+    "descripcion": "Descripción del producto 6",
+    "precio": 60.0,
+    "categoria": "Categoria 1",
+    "imagen_principal": "imagen6.jpg",
+    "imagenes": [
+      {
+        "id": 6,
+        "url": "imagen6_1.jpg",
+        "orden": 0
+      }
+    ],
+    "calificacion": 3.8,
+    "stock": 50,
+    "oferta": true,
+    "descuento": 6.0,
+    "sku": "SKU6",
+    "fecha_creacion": "2024-01-06T00:00:00.000Z",
+    "activo": true
+  },
+  {
+    "id": 7,
+    "nombre": "Producto 7",
+    "descripcion": "Descripción del producto 7",
+    "precio": 70.0,
+    "categoria": "Categoria 2",
+    "imagen_principal": "imagen7.jpg",
+    "imagenes": [
+      {
+        "id": 7,
+        "url": "imagen7_1.jpg",
+        "orden": 0
+      }
+    ],
+    "calificacion": 4.7,
+    "stock": 40,
+    "oferta": false,
+    "descuento": 0.0,
+    "sku": "SKU7",
+    "fecha_creacion": "2024-01-07T00:00:00.000Z",
+    "activo": true
+  },
+  {
+    "id": 8,
+    "nombre": "Producto 8",
+    "descripcion": "Descripción del producto 3",
+    "precio": 80.0,
+    "categoria": "Categoria 3",
+    "imagen_principal": "imagen8.jpg",
+    "imagenes": [
+      {
+        "id": 8,
+        "url": "imagen8_1.jpg",
+        "orden": 0
+      }
+    ],
+    "calificacion": 4.1,
+    "stock": 30,
+    "oferta": true,
+    "descuento": 8.0,
+    "sku": "SKU8",
+    "fecha_creacion": "2024-01-08T00:00:00.000Z",
+    "activo": true
+  },
+  {
+    "id": 9,
+    "nombre": "Producto 9",
+    "descripcion": "Descripción del producto 9",
+    "precio": 90.0,
+    "categoria": "Categoria 3",
+    "imagen_principal": "imagen9.jpg",
+    "imagenes": [
+      {
+        "id": 9,
+        "url": "imagen9_1.jpg",
+        "orden": 0
+      }
+    ],
+    "calificacion": 3.9,
+    "stock": 20,
+    "oferta": false,
+    "descuento": 0.0,
+    "sku": "SKU9",
+    "fecha_creacion": "2024-01-09T00:00:00.000Z",
+    "activo": true
+  },
+  {
+    "id": 10,
+    "nombre": "Producto 10",
+    "descripcion": "Descripción del producto 10",
+    "precio": 100.0,
+    "categoria": "Categoria 1",
+    "imagen_principal": "imagen10.jpg",
+    "imagenes": [
+      {
+        "id": 10,
+        "url": "imagen10_1.jpg",
+        "orden": 0
+      }
+    ],
+    "calificacion": 4.6,
+    "stock": 10,
+    "oferta": true,
+    "descuento": 10.0,
+    "sku": "SKU10",
+    "fecha_creacion": "2024-01-10T00:00:00.000Z",
+    "activo": true
+  }
+]
