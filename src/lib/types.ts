@@ -5,7 +5,7 @@ export interface Product {
   precio: number;
   categoria: string;
   imagen_principal: string;
-  imagenes: Array<{
+  Imagen: Array<{
     id: number;
     url: string;
     orden: number;

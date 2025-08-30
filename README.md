@@ -29,42 +29,45 @@ Estas tecnologías fueron elegidas por su integración con Next.js, facilidad de
    ```sh
    npm install
    ```
-3. Aplica las migraciones y ejecuta el seed de sqlite
-   Esto creará la base de datos, aplicará el esquema y poblará los datos de ejemplo:
-
+3. Generar el cliente de prisma:
    ```sh
-   npx prisma migrate reset
+   npx prisma generate
+   ```
+4. (Opcional) Si necesitas actualizar el modelo Prisma desde la base de datos de Neon:
+   ```sh
+   npx prisma db pull
    ```
 
-   - Responde `y` cuando pregunte si quieres resetear la base de datos.
-   - Este comando también ejecuta el seed automáticamente.
-
-4. Verifica los datos con Prisma Studio (opcional)
-   ```sh
-   npx prisma studio
-   ```
-   - Esto abrirá una interfaz web para visualizar los datos cargados.
+> **Nota:**  
+> La base de datos y los datos ya están creados en Neon.  
+> Solo necesitas correr migraciones si cambias el modelo o necesitas poblar una nueva base de datos.
 
 ---
 
 ### ⚠️ Notas importantes
 
-- **El archivo de seed está en JavaScript (`prisma/seed.js`) y usa sintaxis CommonJS (`require`)** para asegurar compatibilidad con Prisma y evitar problemas de ejecución con módulos ESM/TypeScript.
-- Si modificas el modelo en `schema.prisma`, recuerda correr:
+- La base de datos está alojada en [Neon](https://neon.tech/).
+- Si cambias el modelo en `schema.prisma`, recuerda correr:
   ```sh
   npx prisma migrate dev --name <nombre_migracion>
   ```
-- Si tienes errores con el cliente Prisma, ejecuta:
-  ```sh
-  npx prisma generate
-  ```
-- El seed toma los datos de `src/Data.json`. Si cambias la estructura, ajusta también el seed.
+  y aplicar los cambios en Neon.
+- Si necesitas poblar la base de datos desde cero, puedes usar el archivo SQL proporcionado en la documentación.
 
 ## Variables de entorno necesarias
 
 ```
-DATABASE_URL="file:./dev.db"
+DATABASE_URL="postgres://<usuario>:<contraseña>@<host>/<database>?sslmode=require"
 ```
+
+## Scripts SQL de ejemplo
+
+Los archivos SQL para crear y poblar la base de datos se encuentran en la carpeta [`/sql`](./sql).
+
+- [`schema.sql`](./sql/schema.sql): Crea las tablas necesarias.
+- [`seed.sql`](./sql/seed.sql): Inserta datos de ejemplo.
+
+Puedes ejecutarlos desde el panel de tu proveedor de base de datos (por ejemplo, Neon) o usando una herramienta como `psql`.
 
 ## Comandos para ejecutar el proyecto
 
@@ -93,20 +96,10 @@ DATABASE_URL="file:./dev.db"
 │   ├── app/               # Rutas y páginas principales de la app (Next.js App Router)
 │   │   ├── api/           # Endpoints del backend (API Routes de Next.js)
 │   │   │   ├── categories/route.ts
-│   │   │   │   # GET /api/categories
-│   │   │   │   # Devuelve todas las categorías únicas de productos.
 │   │   │   ├── products/route.ts
-│   │   │   │   # GET /api/products
-│   │   │   │   # Devuelve todos los productos paginados (parámetros: page, limit).
 │   │   │   ├── products/[id]/route.ts
-│   │   │   │   # GET /api/products/[id]
-│   │   │   │   # Devuelve el detalle de un producto por su id.
 │   │   │   ├── products/categories/[categorie]/route.ts
-│   │   │   │   # GET /api/products/categories/[categorie]
-│   │   │   │   # Devuelve productos filtrados por categoría, soporta paginación (page, limit).
-│   │   │   ├── products/search/route.ts
-│   │   │   │   # GET /api/products/search?q=texto
-│   │   │   │   # Busca productos por nombre, descripción o categoría, soporta paginación (page, limit).
+│   │   │   └── products/search/route.ts
 │   │   ├── components/    # Componentes reutilizables de la interfaz
 │   │   ├── hook/          # Custom hooks para lógica reutilizable
 │   │   ├── lib/           # Funciones utilitarias y lógica de negocio

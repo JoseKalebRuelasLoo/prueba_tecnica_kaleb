@@ -50,7 +50,7 @@ export default function ProductDetailPage() {
   // Arreglo de imágenes del producto
   const images = [
     { url: product.imagen_principal, id: "principal" },
-    ...product.imagenes.map((img) => ({ url: img.url, id: img.id })),
+    ...product.Imagen.map((img) => ({ url: img.url, id: img.id })),
   ];
 
   return (

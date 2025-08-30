@@ -1,0 +1,22 @@
+CREATE TABLE "Producto" (
+  id SERIAL PRIMARY KEY,
+  nombre VARCHAR(255) NOT NULL,
+  descripcion TEXT NOT NULL,
+  precio DOUBLE PRECISION NOT NULL,
+  categoria VARCHAR(255) NOT NULL,
+  imagen_principal TEXT NOT NULL,
+  calificacion DOUBLE PRECISION NOT NULL,
+  stock INTEGER NOT NULL,
+  oferta BOOLEAN NOT NULL,
+  descuento DOUBLE PRECISION NOT NULL,
+  sku VARCHAR(255) UNIQUE NOT NULL,
+  fecha_creacion TIMESTAMP DEFAULT NOW(),
+  activo BOOLEAN NOT NULL
+);
+
+CREATE TABLE "Imagen" (
+  id SERIAL PRIMARY KEY,
+  url TEXT NOT NULL,
+  orden INTEGER NOT NULL,
+  productoId INTEGER NOT NULL REFERENCES "Producto"(id)
+);
