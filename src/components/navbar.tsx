@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import useProductsHook from "@/hook/hook";
@@ -13,6 +13,10 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const { searchProducts, searchByCategory } = useProductsHook();
   const { categories, activeCategorie } = UseStore();
+
+  // Estado para saber si el componente está montado para evitar problemas de hidratación
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   // Maneja la búsqueda por texto
   const handleSearch = (e: React.FormEvent) => {
@@ -38,12 +42,12 @@ export default function Navbar() {
           placeholder="Buscar productos..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-4/6 px-3 py-2 rounded-l border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none"
+          className="w-4/6 px-3 py-2 rounded-l border border-gray-300  bg-gray-100 text-gray-900  focus:outline-none"
         />
         <select
-          value={activeCategorie}
+          value={activeCategorie || ""}
           onChange={(e) => searchByCategory(e.target.value)}
-          className="w-2/6 px-3 py-2 rounded-r border-t border-b border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none"
+          className="w-2/6 px-3 py-2 rounded-r border-t border-b border-r border-gray-300  bg-white  text-gray-900 focus:outline-none"
         >
           <option value="">Todas las categorías</option>
           {categories.map((cat) => (
@@ -65,13 +69,16 @@ export default function Navbar() {
             aria-label="Cambiar tema"
           />
           <div className="block w-10 h-6 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
-          <div
-            className={`absolute left-1 top-1 w-4 h-4 rounded-full transition-transform ${
-              isDark
-                ? "translate-x-0 bg-blue-100"
-                : "translate-x-4 bg-yellow-400"
-            }`}
-          ></div>
+          {/* Indicador del estado del tema*/}
+          {mounted && (
+            <div
+              className={`absolute left-1 top-1 w-4 h-4 rounded-full transition-transform ${
+                isDark
+                  ? "translate-x-0 bg-blue-100"
+                  : "translate-x-4 bg-yellow-400"
+              }`}
+            ></div>
+          )}
         </div>
       </label>
     </nav>
