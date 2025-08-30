@@ -26,7 +26,7 @@ export async function GET(req: Request) {
     return NextResponse.json(
       {
         status: "error",
-        message: "Error obtaining products",
+        message: "Error obtaining products: " + error,
       },
       { status: 500 }
     );

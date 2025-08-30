@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 import products from "@/Data.json";
+import type { Product } from "@/lib/types";
 
 export async function GET(
   req: Request,
-  context: { params: { categorie: string } }
+  context: { params: Promise<{ categorie: string }> }
 ) {
   try {
-    const categorie = String(context.params.categorie);
-    console.log(categorie);
+    const { categorie } = await context.params;
 
     const { searchParams } = new URL(req.url);
     const page = parseInt(searchParams.get("page") || "1");
@@ -16,9 +16,12 @@ export async function GET(
     const start = (page - 1) * limit;
     const end = start + limit;
 
-    const productsByCategory = products.filter(
-      (item) => item.categoria === categorie
-    );
+    const productsByCategory = (products as unknown as Product[])
+      .map((item) => ({
+        ...item,
+        fecha_creacion: new Date(item.fecha_creacion),
+      }))
+      .filter((item: Product) => item.categoria === categorie);
 
     return NextResponse.json({
       status: "success",
@@ -34,7 +37,7 @@ export async function GET(
     return NextResponse.json(
       {
         status: "error",
-        message: "Error obtaining products by category",
+        message: "Error obtaining products by category: " + error,
       },
       { status: 500 }
     );

@@ -1,10 +1,17 @@
 import { NextResponse } from "next/server";
 import products from "@/Data.json";
+import type { Product } from "@/lib/types";
 
-export async function GET(req: Request, context: { params: { id: string } }) {
+export async function GET(
+  req: Request,
+  context: { params: Promise<{ id: string }> }
+) {
   try {
-    const id = Number(context.params.id);
-    const product = products.find((item) => item.id === id);
+    const { id } = await context.params;
+
+    const product = (products as unknown as Product[]).find(
+      (item: Product) => String(item.id) === id
+    );
 
     return NextResponse.json({
       status: "success",
@@ -15,7 +22,7 @@ export async function GET(req: Request, context: { params: { id: string } }) {
     return NextResponse.json(
       {
         status: "error",
-        message: "Error obtaining product",
+        message: "Error obtaining product: " + error,
       },
       { status: 500 }
     );

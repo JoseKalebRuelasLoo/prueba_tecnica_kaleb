@@ -1,10 +1,15 @@
 import { NextResponse } from "next/server";
 import products from "@/Data.json";
+import type { Product } from "@/lib/types";
 
-export async function GET(req: Request) {
+export async function GET() {
   try {
     const categories = [
-      ...new Set(products.map((product: any) => product.categoria)),
+      ...new Set(
+        (products as unknown as Product[]).map(
+          (product: Product) => product.categoria
+        )
+      ),
     ];
 
     return NextResponse.json({
@@ -12,7 +17,7 @@ export async function GET(req: Request) {
       data: categories,
       message: "Categories obtained successfully",
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       {
         status: "error",

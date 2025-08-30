@@ -7,7 +7,7 @@ import useProductsHook from "@/hook/hook";
 import { UseStore } from "@/store/store";
 import { House } from "lucide-react";
 
-export default function Navbar({}: {}) {
+export default function Navbar() {
   const [query, setQuery] = useState("");
   const { theme, setTheme } = useTheme();
   const { searchProducts, searchByCategory } = useProductsHook();
