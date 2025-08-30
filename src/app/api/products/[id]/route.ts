@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import products from "@/Data.json";
-import type { Product } from "@/lib/types";
+import { prisma } from "@/lib/prisma";
 
 // Endpoint para obtener un producto por su ID
 export async function GET(
@@ -11,10 +10,22 @@ export async function GET(
     // Obtiene el id de los parámetros
     const { id } = await context.params;
 
-    // Busca el producto por id
-    const product = (products as unknown as Product[]).find(
-      (item: Product) => String(item.id) === id
-    );
+    // Busca el producto por id en la base de datos usando Prisma
+    const product = await prisma.producto.findUnique({
+      where: { id: Number(id) },
+      include: { imagenes: true },
+    });
+
+    // Si no se encuentra el producto
+    if (!product) {
+      return NextResponse.json(
+        {
+          status: "error",
+          message: "Product not found",
+        },
+        { status: 404 }
+      );
+    }
 
     // Responde con el producto encontrado
     return NextResponse.json({

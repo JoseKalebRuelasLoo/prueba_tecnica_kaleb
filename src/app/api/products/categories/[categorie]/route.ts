@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import products from "@/Data.json";
-import type { Product } from "@/lib/types";
+import { prisma } from "@/lib/prisma";
 
 export async function GET(
   req: Request,
@@ -19,12 +18,10 @@ export async function GET(
     const end = start + limit;
 
     // Filtra productos por categoría
-    const productsByCategory = (products as unknown as Product[])
-      .map((item) => ({
-        ...item,
-        fecha_creacion: new Date(item.fecha_creacion),
-      }))
-      .filter((item: Product) => item.categoria === categorie);
+    const productsByCategory = await prisma.producto.findMany({
+      where: { categoria: categorie },
+      include: { imagenes: true },
+    });
 
     // Responde con los productos filtrados y paginados
     return NextResponse.json({

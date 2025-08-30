@@ -1,11 +1,16 @@
 import { NextResponse } from "next/server";
-import products from "@/Data.json";
+import { prisma } from "@/lib/prisma";
 
 export async function GET(req: Request) {
   try {
     // Obtiene el parámetro de búsqueda
     const { searchParams } = new URL(req.url);
     const q = (searchParams.get("q") || "").toLowerCase();
+
+    // Busca productos en la base de datos
+    const products = await prisma.producto.findMany({
+      where: { nombre: { contains: q } },
+    });
 
     // Filtra productos por nombre, descripción o categoría
     const filteredProducts = products.filter(

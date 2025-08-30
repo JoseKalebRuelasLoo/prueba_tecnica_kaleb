@@ -1,18 +1,14 @@
 import { NextResponse } from "next/server";
-import products from "@/Data.json";
-import type { Product } from "@/lib/types";
+import { prisma } from "@/lib/prisma";
 
 // Endpoint para obtener todas las categorías únicas de productos
 export async function GET() {
   try {
     // Extrae las categorías únicas de los productos
-    const categories = [
-      ...new Set(
-        (products as unknown as Product[]).map(
-          (product: Product) => product.categoria
-        )
-      ),
-    ];
+    const categories = await prisma.producto.findMany({
+      select: { categoria: true },
+      distinct: ["categoria"],
+    });
 
     // Responde con la lista de categorías
     return NextResponse.json({
