@@ -2,6 +2,7 @@
   "name": "prueba_tecnica_kaleb",
   "version": "0.1.0",
   "private": true,
+  "type": "commonjs",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
@@ -9,12 +10,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@prisma/client": "^6.15.0",
     "lucide-react": "^0.542.0",
     "next": "15.5.2",
     "next-themes": "^0.4.6",
     "postcss": "^8.5.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "sqlite3": "^5.1.7",
     "zustand": "^5.0.8"
   },
   "devDependencies": {
@@ -25,7 +28,12 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
+    "prisma": "^6.15.0",
     "tailwindcss": "^4.1.12",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.js"
   }
 }

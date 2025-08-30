@@ -29,10 +29,42 @@ Estas tecnologías fueron elegidas por su integración con Next.js, facilidad de
    ```sh
    npm install
    ```
+3. Aplica las migraciones y ejecuta el seed de sqlite
+   Esto creará la base de datos, aplicará el esquema y poblará los datos de ejemplo:
+
+   ```sh
+   npx prisma migrate reset
+   ```
+
+   - Responde `y` cuando pregunte si quieres resetear la base de datos.
+   - Este comando también ejecuta el seed automáticamente.
+
+4. Verifica los datos con Prisma Studio (opcional)
+   ```sh
+   npx prisma studio
+   ```
+   - Esto abrirá una interfaz web para visualizar los datos cargados.
+
+---
+
+### ⚠️ Notas importantes
+
+- **El archivo de seed está en JavaScript (`prisma/seed.js`) y usa sintaxis CommonJS (`require`)** para asegurar compatibilidad con Prisma y evitar problemas de ejecución con módulos ESM/TypeScript.
+- Si modificas el modelo en `schema.prisma`, recuerda correr:
+  ```sh
+  npx prisma migrate dev --name <nombre_migracion>
+  ```
+- Si tienes errores con el cliente Prisma, ejecuta:
+  ```sh
+  npx prisma generate
+  ```
+- El seed toma los datos de `src/Data.json`. Si cambias la estructura, ajusta también el seed.
 
 ## Variables de entorno necesarias
 
-Ya que por tiempo no se pudo hacer una integracion con sqlite, no es necesario alguna variable de entorno.
+```
+DATABASE_URL="file:./dev.db"
+```
 
 ## Comandos para ejecutar el proyecto
 
