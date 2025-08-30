@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
-import categories from "@/Data.json";
+import products from "@/Data.json";
 
 export async function GET(req: Request) {
   try {
+    const categories = [
+      ...new Set(products.map((product: any) => product.categoria)),
+    ];
+
     return NextResponse.json({
       status: "success",
       data: categories,

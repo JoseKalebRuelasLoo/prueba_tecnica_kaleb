@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "nombre": "Producto 1",
-    "descripcion": "Descripción del producto 1",
-    "precio": 10.0,
-    "categoria": "Categoria 1",
-    "imagen_principal": "imagen1.jpg",
+    "nombre": "Auriculares Bluetooth Sony",
+    "descripcion": "Auriculares inalámbricos con cancelación de ruido y 30 horas de batería.",
+    "precio": 59.99,
+    "categoria": "Electrónica",
+    "imagen_principal": "https://m.media-amazon.com/images/I/61rA+1-Za7L._UF1000,1000_QL80_.jpg",
     "imagenes": [
       {
         "id": 1,
-        "url": "imagen1_1.jpg",
+        "url": "https://m.media-amazon.com/images/I/61MgCvWRlpL._AC_SL1024_.jpg",
         "orden": 0
       }
     ],
@@ -17,43 +17,43 @@
     "stock": 100,
     "oferta": false,
     "descuento": 0.0,
-    "sku": "SKU1",
+    "sku": "AUD-SNY-001",
     "fecha_creacion": "2024-01-01T00:00:00.000Z",
     "activo": true
   },
   {
     "id": 2,
-    "nombre": "Producto 2",
-    "descripcion": "Descripción del producto 2",
-    "precio": 20.0,
-    "categoria": "Categoria 2",
-    "imagen_principal": "imagen2.jpg",
+    "nombre": "Cafetera Nespresso",
+    "descripcion": "Cafetera compacta de cápsulas con sistema de calentamiento rápido.",
+    "precio": 89.99,
+    "categoria": "Hogar",
+    "imagen_principal": "https://images.unsplash.com/photo-1606312617254-c63f36b7f2b5",
     "imagenes": [
       {
         "id": 2,
-        "url": "imagen2_1.jpg",
+        "url": "https://images.unsplash.com/photo-1606312617254-c63f36b7f2b5",
         "orden": 0
       }
     ],
     "calificacion": 4.0,
     "stock": 90,
     "oferta": true,
-    "descuento": 2.0,
-    "sku": "SKU2",
+    "descuento": 10.0,
+    "sku": "CAF-NES-002",
     "fecha_creacion": "2024-01-02T00:00:00.000Z",
     "activo": true
   },
   {
     "id": 3,
-    "nombre": "Producto 3",
-    "descripcion": "Descripción del producto 3",
-    "precio": 30.0,
-    "categoria": "Categoria 3",
-    "imagen_principal": "imagen3.jpg",
+    "nombre": "Zapatillas Deportivas Nike",
+    "descripcion": "Zapatillas ligeras para running, disponibles en varios colores.",
+    "precio": 120.0,
+    "categoria": "Ropa y Calzado",
+    "imagen_principal": "https://images.unsplash.com/photo-1600185364913-dcde3db6b3ff",
     "imagenes": [
       {
         "id": 3,
-        "url": "imagen3_1.jpg",
+        "url": "https://images.unsplash.com/photo-1600185364913-dcde3db6b3ff",
         "orden": 0
       }
     ],
@@ -61,43 +61,43 @@
     "stock": 80,
     "oferta": false,
     "descuento": 0.0,
-    "sku": "SKU3",
+    "sku": "ZAP-NIK-003",
     "fecha_creacion": "2024-01-03T00:00:00.000Z",
     "activo": true
   },
   {
     "id": 4,
-    "nombre": "Producto 4",
-    "descripcion": "Descripción del producto 4",
-    "precio": 40.0,
-    "categoria": "Categoria 2",
-    "imagen_principal": "imagen4.jpg",
+    "nombre": "Smartwatch Samsung Galaxy",
+    "descripcion": "Reloj inteligente con monitor de frecuencia cardíaca y GPS integrado.",
+    "precio": 199.99,
+    "categoria": "Electrónica",
+    "imagen_principal": "https://images.unsplash.com/photo-1605902711622-cfb43c443f0d",
     "imagenes": [
       {
         "id": 4,
-        "url": "imagen4_1.jpg",
+        "url": "https://images.unsplash.com/photo-1605902711622-cfb43c443f0d",
         "orden": 0
       }
     ],
     "calificacion": 5.0,
     "stock": 70,
     "oferta": true,
-    "descuento": 5.0,
-    "sku": "SKU4",
+    "descuento": 20.0,
+    "sku": "SWT-SAM-004",
     "fecha_creacion": "2024-01-04T00:00:00.000Z",
     "activo": true
   },
   {
     "id": 5,
-    "nombre": "Producto 5",
-    "descripcion": "Descripción del producto 5",
-    "precio": 50.0,
-    "categoria": "Categoria 1",
-    "imagen_principal": "imagen5.jpg",
+    "nombre": "Mochila de Viaje Herschel",
+    "descripcion": "Mochila resistente con compartimento para laptop y múltiples bolsillos.",
+    "precio": 75.0,
+    "categoria": "Accesorios",
+    "imagen_principal": "https://images.unsplash.com/photo-1611078480727-f1d4c38c046e",
     "imagenes": [
       {
         "id": 5,
-        "url": "imagen5_1.jpg",
+        "url": "https://images.unsplash.com/photo-1611078480727-f1d4c38c046e",
         "orden": 0
       }
     ],
@@ -105,43 +105,43 @@
     "stock": 60,
     "oferta": false,
     "descuento": 0.0,
-    "sku": "SKU5",
+    "sku": "MOC-HER-005",
     "fecha_creacion": "2024-01-05T00:00:00.000Z",
     "activo": true
   },
   {
     "id": 6,
-    "nombre": "Producto 6",
-    "descripcion": "Descripción del producto 6",
-    "precio": 60.0,
-    "categoria": "Categoria 1",
-    "imagen_principal": "imagen6.jpg",
+    "nombre": "Juego de Ollas Tefal",
+    "descripcion": "Set de ollas antiadherentes para cocina, incluye 5 piezas.",
+    "precio": 110.0,
+    "categoria": "Hogar",
+    "imagen_principal": "https://images.unsplash.com/photo-1600185364915-8c1f02a215e7",
     "imagenes": [
       {
         "id": 6,
-        "url": "imagen6_1.jpg",
+        "url": "https://images.unsplash.com/photo-1600185364915-8c1f02a215e7",
         "orden": 0
       }
     ],
     "calificacion": 3.8,
     "stock": 50,
     "oferta": true,
-    "descuento": 6.0,
-    "sku": "SKU6",
+    "descuento": 15.0,
+    "sku": "OLL-TEF-006",
     "fecha_creacion": "2024-01-06T00:00:00.000Z",
     "activo": true
   },
   {
     "id": 7,
-    "nombre": "Producto 7",
-    "descripcion": "Descripción del producto 7",
-    "precio": 70.0,
-    "categoria": "Categoria 2",
-    "imagen_principal": "imagen7.jpg",
+    "nombre": "Gafas de Sol Ray-Ban",
+    "descripcion": "Gafas de sol clásicas con protección UV 400 y montura metálica.",
+    "precio": 150.0,
+    "categoria": "Accesorios",
+    "imagen_principal": "https://images.unsplash.com/photo-1581579182548-7f3c3c9c2e77",
     "imagenes": [
       {
         "id": 7,
-        "url": "imagen7_1.jpg",
+        "url": "https://images.unsplash.com/photo-1581579182548-7f3c3c9c2e77",
         "orden": 0
       }
     ],
@@ -149,43 +149,43 @@
     "stock": 40,
     "oferta": false,
     "descuento": 0.0,
-    "sku": "SKU7",
+    "sku": "GAF-RAY-007",
     "fecha_creacion": "2024-01-07T00:00:00.000Z",
     "activo": true
   },
   {
     "id": 8,
-    "nombre": "Producto 8",
-    "descripcion": "Descripción del producto 3",
-    "precio": 80.0,
-    "categoria": "Categoria 3",
-    "imagen_principal": "imagen8.jpg",
+    "nombre": "Tablet Apple iPad",
+    "descripcion": "Tablet con pantalla Retina de 10.2 pulgadas y chip A13 Bionic.",
+    "precio": 329.0,
+    "categoria": "Electrónica",
+    "imagen_principal": "https://images.unsplash.com/photo-1581276879432-15b0b28d6f92",
     "imagenes": [
       {
         "id": 8,
-        "url": "imagen8_1.jpg",
+        "url": "https://images.unsplash.com/photo-1581276879432-15b0b28d6f92",
         "orden": 0
       }
     ],
     "calificacion": 4.1,
     "stock": 30,
     "oferta": true,
-    "descuento": 8.0,
-    "sku": "SKU8",
+    "descuento": 30.0,
+    "sku": "TAB-APP-008",
     "fecha_creacion": "2024-01-08T00:00:00.000Z",
     "activo": true
   },
   {
     "id": 9,
-    "nombre": "Producto 9",
-    "descripcion": "Descripción del producto 9",
-    "precio": 90.0,
-    "categoria": "Categoria 3",
-    "imagen_principal": "imagen9.jpg",
+    "nombre": "Monitor LG 27 pulgadas",
+    "descripcion": "Monitor IPS con resolución QHD y 75Hz de tasa de refresco.",
+    "precio": 220.0,
+    "categoria": "Electrónica",
+    "imagen_principal": "https://images.unsplash.com/photo-1603791440384-56cd371ee9e2",
     "imagenes": [
       {
         "id": 9,
-        "url": "imagen9_1.jpg",
+        "url": "https://images.unsplash.com/photo-1603791440384-56cd371ee9e2",
         "orden": 0
       }
     ],
@@ -193,29 +193,29 @@
     "stock": 20,
     "oferta": false,
     "descuento": 0.0,
-    "sku": "SKU9",
+    "sku": "MON-LG-009",
     "fecha_creacion": "2024-01-09T00:00:00.000Z",
     "activo": true
   },
   {
     "id": 10,
-    "nombre": "Producto 10",
-    "descripcion": "Descripción del producto 10",
-    "precio": 100.0,
-    "categoria": "Categoria 1",
-    "imagen_principal": "imagen10.jpg",
+    "nombre": "Smart TV Samsung 55\"",
+    "descripcion": "Televisor 4K UHD con HDR y asistentes de voz integrados.",
+    "precio": 599.99,
+    "categoria": "Electrónica",
+    "imagen_principal": "https://images.unsplash.com/photo-1581977721672-32e5c6d0e2d8",
     "imagenes": [
       {
         "id": 10,
-        "url": "imagen10_1.jpg",
+        "url": "https://images.unsplash.com/photo-1581977721672-32e5c6d0e2d8",
         "orden": 0
       }
     ],
     "calificacion": 4.6,
     "stock": 10,
     "oferta": true,
-    "descuento": 10.0,
-    "sku": "SKU10",
+    "descuento": 50.0,
+    "sku": "TV-SAM-010",
     "fecha_creacion": "2024-01-10T00:00:00.000Z",
     "activo": true
   }

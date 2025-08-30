@@ -3,10 +3,11 @@ import products from "@/Data.json";
 
 export async function GET(
   req: Request,
-  { params }: { params: { categorie: string } }
+  context: { params: { categorie: string } }
 ) {
   try {
-    const categorie = params.categorie;
+    const categorie = String(context.params.categorie);
+    console.log(categorie);
 
     const { searchParams } = new URL(req.url);
     const page = parseInt(searchParams.get("page") || "1");
