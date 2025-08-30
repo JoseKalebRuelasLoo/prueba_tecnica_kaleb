@@ -27,11 +27,11 @@
     "descripcion": "Cafetera compacta de cápsulas con sistema de calentamiento rápido.",
     "precio": 89.99,
     "categoria": "Hogar",
-    "imagen_principal": "https://images.unsplash.com/photo-1606312617254-c63f36b7f2b5",
+    "imagen_principal": "https://lh3.googleusercontent.com/d/15zXx4izF2d6ROEce_o3ZYX6Nccubp5v9",
     "imagenes": [
       {
         "id": 2,
-        "url": "https://images.unsplash.com/photo-1606312617254-c63f36b7f2b5",
+        "url": "https://lh3.googleusercontent.com/d/15zXx4izF2d6ROEce_o3ZYX6Nccubp5v9",
         "orden": 0
       }
     ],
@@ -49,11 +49,11 @@
     "descripcion": "Zapatillas ligeras para running, disponibles en varios colores.",
     "precio": 120.0,
     "categoria": "Ropa y Calzado",
-    "imagen_principal": "https://images.unsplash.com/photo-1600185364913-dcde3db6b3ff",
+    "imagen_principal": "https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/34490c6e-0488-4eb3-ad65-28d3d3dbd866/W+NIKE+AIR+MAX+INTRLK+LITE.png",
     "imagenes": [
       {
         "id": 3,
-        "url": "https://images.unsplash.com/photo-1600185364913-dcde3db6b3ff",
+        "url": "https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/34490c6e-0488-4eb3-ad65-28d3d3dbd866/W+NIKE+AIR+MAX+INTRLK+LITE.png",
         "orden": 0
       }
     ],
@@ -71,11 +71,11 @@
     "descripcion": "Reloj inteligente con monitor de frecuencia cardíaca y GPS integrado.",
     "precio": 199.99,
     "categoria": "Electrónica",
-    "imagen_principal": "https://images.unsplash.com/photo-1605902711622-cfb43c443f0d",
+    "imagen_principal": "https://m.media-amazon.com/images/I/71SZNup1qrL._UF894,1000_QL80_.jpg",
     "imagenes": [
       {
         "id": 4,
-        "url": "https://images.unsplash.com/photo-1605902711622-cfb43c443f0d",
+        "url": "https://m.media-amazon.com/images/I/71SZNup1qrL._UF894,1000_QL80_.jpg",
         "orden": 0
       }
     ],
@@ -93,11 +93,11 @@
     "descripcion": "Mochila resistente con compartimento para laptop y múltiples bolsillos.",
     "precio": 75.0,
     "categoria": "Accesorios",
-    "imagen_principal": "https://images.unsplash.com/photo-1611078480727-f1d4c38c046e",
+    "imagen_principal": "https://m.media-amazon.com/images/I/61UY-lhhlOL._UY1000_.jpg",
     "imagenes": [
       {
         "id": 5,
-        "url": "https://images.unsplash.com/photo-1611078480727-f1d4c38c046e",
+        "url": "https://m.media-amazon.com/images/I/61UY-lhhlOL._UY1000_.jpg",
         "orden": 0
       }
     ],
@@ -115,11 +115,11 @@
     "descripcion": "Set de ollas antiadherentes para cocina, incluye 5 piezas.",
     "precio": 110.0,
     "categoria": "Hogar",
-    "imagen_principal": "https://images.unsplash.com/photo-1600185364915-8c1f02a215e7",
+    "imagen_principal": "https://m.media-amazon.com/images/I/817TFTQAsvL.jpg",
     "imagenes": [
       {
         "id": 6,
-        "url": "https://images.unsplash.com/photo-1600185364915-8c1f02a215e7",
+        "url": "https://m.media-amazon.com/images/I/817TFTQAsvL.jpg",
         "orden": 0
       }
     ],
@@ -137,11 +137,11 @@
     "descripcion": "Gafas de sol clásicas con protección UV 400 y montura metálica.",
     "precio": 150.0,
     "categoria": "Accesorios",
-    "imagen_principal": "https://images.unsplash.com/photo-1581579182548-7f3c3c9c2e77",
+    "imagen_principal": "https://cdn.shopify.com/s/files/1/0035/5991/5629/products/8056597918602_2.jpg",
     "imagenes": [
       {
         "id": 7,
-        "url": "https://images.unsplash.com/photo-1581579182548-7f3c3c9c2e77",
+        "url": "https://cdn.shopify.com/s/files/1/0035/5991/5629/products/8056597918602_2.jpg",
         "orden": 0
       }
     ],
@@ -159,11 +159,11 @@
     "descripcion": "Tablet con pantalla Retina de 10.2 pulgadas y chip A13 Bionic.",
     "precio": 329.0,
     "categoria": "Electrónica",
-    "imagen_principal": "https://images.unsplash.com/photo-1581276879432-15b0b28d6f92",
+    "imagen_principal": "https://webonline.macstore.mx/img/sku/ipadapp678_FZ.jpg",
     "imagenes": [
       {
         "id": 8,
-        "url": "https://images.unsplash.com/photo-1581276879432-15b0b28d6f92",
+        "url": "https://webonline.macstore.mx/img/sku/ipadapp678_FZ.jpg",
         "orden": 0
       }
     ],
@@ -181,11 +181,11 @@
     "descripcion": "Monitor IPS con resolución QHD y 75Hz de tasa de refresco.",
     "precio": 220.0,
     "categoria": "Electrónica",
-    "imagen_principal": "https://images.unsplash.com/photo-1603791440384-56cd371ee9e2",
+    "imagen_principal": "https://m.media-amazon.com/images/I/81lC7hURadL.UF894,1000_QL80.jpg",
     "imagenes": [
       {
         "id": 9,
-        "url": "https://images.unsplash.com/photo-1603791440384-56cd371ee9e2",
+        "url": "https://m.media-amazon.com/images/I/81lC7hURadL.UF894,1000_QL80.jpg",
         "orden": 0
       }
     ],
@@ -203,11 +203,11 @@
     "descripcion": "Televisor 4K UHD con HDR y asistentes de voz integrados.",
     "precio": 599.99,
     "categoria": "Electrónica",
-    "imagen_principal": "https://images.unsplash.com/photo-1581977721672-32e5c6d0e2d8",
+    "imagen_principal": "https://i5.walmartimages.com.mx/mg/gm/1p/images/product-images/img_large/00750940183307l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
     "imagenes": [
       {
         "id": 10,
-        "url": "https://images.unsplash.com/photo-1581977721672-32e5c6d0e2d8",
+        "url": "https://i5.walmartimages.com.mx/mg/gm/1p/images/product-images/img_large/00750940183307l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
         "orden": 0
       }
     ],

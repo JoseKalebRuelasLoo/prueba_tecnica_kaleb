@@ -7,8 +7,10 @@ export async function GET(
   context: { params: Promise<{ categorie: string }> }
 ) {
   try {
+    // Obtiene la categoría de los parámetros
     const { categorie } = await context.params;
 
+    // Obtiene parámetros de paginación
     const { searchParams } = new URL(req.url);
     const page = parseInt(searchParams.get("page") || "1");
     const limit = parseInt(searchParams.get("limit") || "10");
@@ -16,6 +18,7 @@ export async function GET(
     const start = (page - 1) * limit;
     const end = start + limit;
 
+    // Filtra productos por categoría
     const productsByCategory = (products as unknown as Product[])
       .map((item) => ({
         ...item,
@@ -23,6 +26,7 @@ export async function GET(
       }))
       .filter((item: Product) => item.categoria === categorie);
 
+    // Responde con los productos filtrados y paginados
     return NextResponse.json({
       status: "success",
       data: productsByCategory.slice(start, end),
@@ -34,6 +38,7 @@ export async function GET(
       },
     });
   } catch (error) {
+    // Manejo de error
     return NextResponse.json(
       {
         status: "error",

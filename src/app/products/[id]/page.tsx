@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import type { Product } from "@/lib/types";
 import useProductsHook from "@/hook/hook";
 
+// Página de detalle de producto
 export default function ProductDetailPage() {
   const [imgIndex, setImgIndex] = useState(0);
 
@@ -15,6 +16,7 @@ export default function ProductDetailPage() {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Carga el producto al montar el componente
   useEffect(() => {
     async function fetchProduct() {
       const prod = await getProductById(Number(id));
@@ -31,6 +33,7 @@ export default function ProductDetailPage() {
   if (!product) {
     return (
       <div className="p-8">
+        {/* Botón para volver */}
         <button
           className="mb-4 px-4 py-2 bg-gray-200 rounded"
           onClick={() => router.back()}
@@ -44,6 +47,7 @@ export default function ProductDetailPage() {
     );
   }
 
+  // Arreglo de imágenes del producto
   const images = [
     { url: product.imagen_principal, id: "principal" },
     ...product.imagenes.map((img) => ({ url: img.url, id: img.id })),
@@ -52,6 +56,7 @@ export default function ProductDetailPage() {
   return (
     <div className="max-w-3xl mx-auto p-6">
       <div className="flex flex-col md:flex-row gap-8">
+        {/* Galería de imágenes */}
         <div className="flex-1 flex flex-col items-center">
           <div className="relative w-full max-w-md">
             <img
@@ -59,6 +64,7 @@ export default function ProductDetailPage() {
               alt={product.nombre}
               className="w-full h-72 object-contain rounded border"
             />
+            {/* Botón anterior */}
             <div className="absolute inset-y-0 left-0 flex items-center">
               <button
                 disabled={imgIndex === 0}
@@ -68,6 +74,7 @@ export default function ProductDetailPage() {
                 ◀
               </button>
             </div>
+            {/* Botón siguiente */}
             <div className="absolute inset-y-0 right-0 flex items-center">
               <button
                 disabled={imgIndex === images.length - 1}
@@ -80,6 +87,7 @@ export default function ProductDetailPage() {
               </button>
             </div>
           </div>
+          {/* Miniaturas de imágenes */}
           <div className="flex gap-2 mt-3">
             {images.map((img, idx) => (
               <button
@@ -98,6 +106,7 @@ export default function ProductDetailPage() {
             ))}
           </div>
         </div>
+        {/* Información del producto */}
         <div className="flex-1 flex flex-col gap-2">
           <h1 className="text-2xl font-bold">{product.nombre}</h1>
           <p className="text-gray-500">{product.categoria}</p>
@@ -116,6 +125,7 @@ export default function ProductDetailPage() {
               </span>
             )}
           </div>
+          {/* Calificación */}
           <div className="flex items-center gap-1 mt-1">
             {Array.from({ length: 5 }).map((_, i) => (
               <span

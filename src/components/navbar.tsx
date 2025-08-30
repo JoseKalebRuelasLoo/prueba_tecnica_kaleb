@@ -7,12 +7,14 @@ import useProductsHook from "@/hook/hook";
 import { UseStore } from "@/store/store";
 import { House } from "lucide-react";
 
+// Barra de navegación principal
 export default function Navbar() {
   const [query, setQuery] = useState("");
   const { theme, setTheme } = useTheme();
   const { searchProducts, searchByCategory } = useProductsHook();
   const { categories, activeCategorie } = UseStore();
 
+  // Maneja la búsqueda por texto
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     searchProducts(query);
@@ -22,12 +24,14 @@ export default function Navbar() {
 
   return (
     <nav className="w-full flex items-center justify-between px-4 py-3 bg-gray-100 dark:bg-gray-900 shadow mb-6">
+      {/* Logo/Home */}
       <Link
         href="/"
         className="text-xl font-bold text-gray-800 dark:text-white hover:underline focus:outline-none"
       >
         <House className="inline-block" size={40} />
       </Link>
+      {/* Buscador y selector de categoría */}
       <form onSubmit={handleSearch} className="flex-1 max-w-2xl flex">
         <input
           type="text"
@@ -49,6 +53,7 @@ export default function Navbar() {
           ))}
         </select>
       </form>
+      {/* Switch de tema claro/oscuro */}
       <label className="ml-4 flex items-center cursor-pointer select-none">
         <span className="mr-2 text-gray-700 dark:text-gray-200 text-sm"></span>
         <div className="relative">
