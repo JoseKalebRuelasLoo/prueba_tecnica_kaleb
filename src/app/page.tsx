@@ -6,7 +6,7 @@ import Link from "next/link";
 import useProductsHook from "@/hook/hook";
 import ProductCard from "@/components/productCard";
 import Pagination from "@/components/pagination";
-import ProductsPerPageSelector from "@/components/ProductsPerPageSelector";
+import ProductsPerPageSelector from "@/components/productsPerPageSelector";
 import ModalError from "@/components/modalError";
 
 export default function ProductGrid() {
