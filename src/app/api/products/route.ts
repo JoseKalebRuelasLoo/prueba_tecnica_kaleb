@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import products from "@/Data.json";
 import { prisma } from "@/lib/prisma";
 
 // Endpoint para obtener productos con paginación
@@ -13,22 +12,20 @@ export async function GET(req: Request) {
     // Calcular el rango de productos a devolver
     const start = (page - 1) * limit;
 
-    // Obtener los productos paginados
-    const paginatedProducts = await prisma.producto.findMany({
+    // Obtener los productos
+    const products = await prisma.producto.findMany({
       include: { imagenes: true },
-      skip: start,
-      take: limit,
     });
 
     // Respuesta exitosa con datos y paginación
     return NextResponse.json({
       status: "success",
-      data: paginatedProducts,
+      data: products.slice(start, start + limit),
       message: "Products obtained successfully",
       pagination: {
         page,
         limit,
-        total: products.length,
+        total: Math.ceil(products.length / limit),
       },
     });
   } catch (error) {

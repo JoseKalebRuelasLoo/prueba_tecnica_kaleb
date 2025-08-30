@@ -27,6 +27,10 @@ interface State {
   page: number;
   // Función para actualizar la página actual
   setPage: (page: number) => void;
+  // Total de páginas para paginación
+  totalPages: number;
+  // Función para actualizar el total de páginas
+  setTotalPages: (totalPages: number) => void;
 
   // Cantidad de productos por página
   productsByPage: number;
@@ -65,6 +69,12 @@ export const UseStore = create<State>()(
         page: 1,
         setPage: (page: number) => {
           set({ page });
+        },
+
+        // Estado y acciones para total de páginas
+        totalPages: 1,
+        setTotalPages: (totalPages: number) => {
+          set({ totalPages });
         },
 
         // Estado y acciones para productos por página

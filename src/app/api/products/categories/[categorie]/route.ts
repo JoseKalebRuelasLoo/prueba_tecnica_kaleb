@@ -15,7 +15,6 @@ export async function GET(
     const limit = parseInt(searchParams.get("limit") || "10");
 
     const start = (page - 1) * limit;
-    const end = start + limit;
 
     // Filtra productos por categoría
     const productsByCategory = await prisma.producto.findMany({
@@ -26,12 +25,12 @@ export async function GET(
     // Responde con los productos filtrados y paginados
     return NextResponse.json({
       status: "success",
-      data: productsByCategory.slice(start, end),
+      data: productsByCategory.slice(start, start + limit),
       message: "Products by category obtained successfully",
       pagination: {
         page,
         limit,
-        total: productsByCategory.length,
+        total: Math.ceil(productsByCategory.length / limit),
       },
     });
   } catch (error) {
