@@ -17,12 +17,12 @@ export async function GET() {
       data: categories,
       message: "Categories obtained successfully",
     });
-  } catch {
+  } catch (error) {
     // Manejo de error
     return NextResponse.json(
       {
         status: "error",
-        message: "Error obtaining categories",
+        message: "Error obtaining categories: " + error,
       },
       { status: 500 }
     );

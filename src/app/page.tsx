@@ -1,19 +1,31 @@
 "use client";
 
 import { UseStore } from "@/store/store";
-import ProductCard from "@/components/productCard";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import useProductsHook from "@/hook/hook";
+import ProductCard from "@/components/productCard";
 import Pagination from "@/components/pagination";
-import ProductsPerPageSelector from "@/components/productsPerPageSelector";
+import ProductsPerPageSelector from "@/components/ProductsPerPageSelector";
+import ModalError from "@/components/modalError";
 
 export default function ProductGrid() {
+  const { error } = useProductsHook();
+  const [showError, setShowError] = useState(true);
+
+  // Obtener productos de la tienda
   const products = UseStore((state) => state.products);
   const currentPage = UseStore((state) => state.page);
   const totalPages = UseStore((state) => state.totalPages);
   const productsByPage = UseStore((state) => state.productsByPage);
 
+  // Funciones para cambiar de página y productos por página del hook
   const { changePage, changeProductsByPage } = useProductsHook();
+
+  // Manejar el cierre del modal
+  useEffect(() => {
+    if (error) setShowError(true);
+  }, [error]);
 
   return (
     <main className="p-4">
@@ -35,6 +47,10 @@ export default function ProductGrid() {
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={changePage}
+      />
+      <ModalError
+        error={showError ? error : null}
+        onClose={() => setShowError(false)}
       />
     </main>
   );

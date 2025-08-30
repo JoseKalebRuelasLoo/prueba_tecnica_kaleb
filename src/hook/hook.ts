@@ -1,20 +1,34 @@
 import { UseStore } from "@/store/store";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Product } from "@/lib/types";
 
 // Función auxiliar para hacer fetch y actualizar productos y paginación
 const fetchProductsAndPagination = async (
   url: string,
   setProducts: (products: Product[]) => void,
-  setTotalPages: (total: number) => void
+  setTotalPages: (total: number) => void,
+  setError: (error: string | null) => void
 ) => {
-  const response = await fetch(url);
-  const data = await response.json();
-  setProducts(data.data);
-  setTotalPages(data.pagination.total);
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    if (!response.ok || data.status === "error") {
+      throw new Error(data.message || "Error obteniendo productos");
+    }
+    setProducts(data.data);
+    setTotalPages(data.pagination.total);
+    setError(null);
+  } catch (error) {
+    setError("Error obteniendo productos: " + error);
+    setProducts([]);
+    setTotalPages(0);
+  }
 };
 
 export default function useProductsHook() {
+  //Variable para el manejo de errores
+  const [error, setError] = useState<string | null>(null);
+
   //Funciones y estados de la store
   const {
     setProducts,
@@ -43,7 +57,7 @@ export default function useProductsHook() {
     } else if (category) {
       url = `/api/products/categories/${category}?page=${customPage}&limit=${customLimit}`;
     }
-    await fetchProductsAndPagination(url, setProducts, setTotalPages);
+    await fetchProductsAndPagination(url, setProducts, setTotalPages, setError);
   };
 
   // Obtener producto por ID
@@ -108,5 +122,6 @@ export default function useProductsHook() {
     searchByCategory,
     changePage,
     changeProductsByPage,
+    error,
   };
 }

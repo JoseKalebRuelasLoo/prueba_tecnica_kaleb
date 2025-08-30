@@ -42,7 +42,7 @@ export async function GET(req: Request) {
     return NextResponse.json(
       {
         status: "error",
-        message: "Error al buscar productos",
+        message: "Error al buscar productos: " + error,
       },
       { status: 500 }
     );
