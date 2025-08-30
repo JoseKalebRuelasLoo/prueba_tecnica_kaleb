@@ -29,6 +29,10 @@ export default function useProductsHook() {
   //Variable para el manejo de errores
   const [error, setError] = useState<string | null>(null);
 
+  // Estado para saber si el componente está montado para evitar problemas de hidratación
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   //Funciones y estados de la store
   const {
     setProducts,
@@ -110,10 +114,12 @@ export default function useProductsHook() {
   };
 
   useEffect(() => {
-    fetchProducts();
-    getCategories();
+    if (mounted) {
+      fetchProducts();
+      getCategories();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [mounted]);
 
   return {
     getProductById,
