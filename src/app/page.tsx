@@ -23,7 +23,7 @@ export default function ProductGrid() {
           </label>
           <select
             id="productsPerPage"
-            className="border rounded px-2 py-1"
+            className="border rounded px-2 py-1 navbar"
             value={productsByPage}
             onChange={(e) => {
               changeProductsByPage(Number(e.target.value));
@@ -37,7 +37,7 @@ export default function ProductGrid() {
           </select>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 mx-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <Link key={product.id} href={`/products/${product.id}`}>
             <ProductCard product={product} />
@@ -46,7 +46,7 @@ export default function ProductGrid() {
       </div>
       <div className="flex justify-center mt-8">
         <button
-          className="px-4 py-2 mx-1 bg-gray-200 rounded disabled:opacity-50"
+          className="px-4 py-2 mx-1 boton text rounded disabled:opacity-50 border border-[]"
           onClick={() => changePage(currentPage - 1)}
           disabled={currentPage === 1}
         >
@@ -54,7 +54,7 @@ export default function ProductGrid() {
         </button>
         <span className="px-4 py-2 mx-1">Página {currentPage}</span>
         <button
-          className="px-4 py-2 mx-1 bg-gray-200 rounded disabled:opacity-50"
+          className="px-4 py-2 mx-1 boton text rounded disabled:opacity-50 border"
           onClick={() => changePage(currentPage + 1)}
           disabled={currentPage === totalPages}
         >

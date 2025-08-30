@@ -23,13 +23,13 @@ export default function Navbar() {
   const isDark = theme === "dark";
 
   return (
-    <nav className="w-full flex items-center justify-between px-4 py-3 bg-gray-100 dark:bg-gray-900 shadow mb-6">
+    <nav className="w-full flex items-center justify-between px-4 py-3 navbar shadow mb-6">
       {/* Logo/Home */}
       <Link
         href="/"
-        className="text-xl font-bold text-gray-800 dark:text-white hover:underline focus:outline-none"
+        className="text-xl pl-2 font-bold text hover:underline focus:outline-none"
       >
-        <House className="inline-block" size={40} />
+        <House className="inline-block" size={30} />
       </Link>
       {/* Buscador y selector de categoría */}
       <form onSubmit={handleSearch} className="flex-1 max-w-2xl flex">
@@ -38,7 +38,7 @@ export default function Navbar() {
           placeholder="Buscar productos..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-4/6 px-3 py-2 rounded-l border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none"
+          className="w-4/6 px-3 py-2 rounded-l border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none"
         />
         <select
           value={activeCategorie}

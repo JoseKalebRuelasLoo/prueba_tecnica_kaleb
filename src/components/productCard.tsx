@@ -5,7 +5,7 @@ import type { Product } from "@/lib/types";
 // Componente para mostrar la tarjeta de un producto
 export default function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col">
+    <div className="tarjeta rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col">
       <div className="relative">
         {/* Imagen principal del producto */}
         <img
@@ -23,7 +23,7 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
       <div className="flex-1 flex flex-col mt-3">
         {/* Nombre y categoría */}
-        <h2 className="text-lg font-semibold text-black">{product.nombre}</h2>
+        <h2 className="text-lg font-semibold text">{product.nombre}</h2>
         <p className="text-gray-500 text-sm">{product.categoria}</p>
         {/* Precio y descuento si aplica */}
         <div className="mt-2 flex items-center gap-2">
