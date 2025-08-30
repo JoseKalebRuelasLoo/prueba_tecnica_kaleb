@@ -4,6 +4,8 @@ import { UseStore } from "@/store/store";
 import ProductCard from "@/components/productCard";
 import Link from "next/link";
 import useProductsHook from "@/hook/hook";
+import Pagination from "@/components/pagination";
+import ProductsPerPageSelector from "@/components/productsPerPageSelector";
 
 export default function ProductGrid() {
   const products = UseStore((state) => state.products);
@@ -17,25 +19,10 @@ export default function ProductGrid() {
     <main className="p-4">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold">Productos</h1>
-        <div>
-          <label htmlFor="productsPerPage" className="mr-2 font-medium">
-            Productos por página:
-          </label>
-          <select
-            id="productsPerPage"
-            className="border rounded px-2 py-1 navbar"
-            value={productsByPage}
-            onChange={(e) => {
-              changeProductsByPage(Number(e.target.value));
-            }}
-          >
-            {[5, 10, 15, 20].map((num) => (
-              <option key={num} value={num}>
-                {num}
-              </option>
-            ))}
-          </select>
-        </div>
+        <ProductsPerPageSelector
+          value={productsByPage}
+          onChange={changeProductsByPage}
+        />
       </div>
       <div className="grid grid-cols-1 mx-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
@@ -44,23 +31,11 @@ export default function ProductGrid() {
           </Link>
         ))}
       </div>
-      <div className="flex justify-center mt-8">
-        <button
-          className="px-4 py-2 mx-1 boton text rounded disabled:opacity-50 border border-[]"
-          onClick={() => changePage(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          Anterior
-        </button>
-        <span className="px-4 py-2 mx-1">Página {currentPage}</span>
-        <button
-          className="px-4 py-2 mx-1 boton text rounded disabled:opacity-50 border"
-          onClick={() => changePage(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        >
-          Siguiente
-        </button>
-      </div>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={changePage}
+      />
     </main>
   );
 }
