@@ -19,7 +19,7 @@ export async function GET(
     // Filtra productos por categoría
     const productsByCategory = await prisma.producto.findMany({
       where: { categoria: categorie },
-      include: { imagenes: true },
+      include: { Imagen: true },
     });
 
     // Responde con los productos filtrados y paginados

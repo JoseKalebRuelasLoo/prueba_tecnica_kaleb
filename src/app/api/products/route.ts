@@ -14,7 +14,7 @@ export async function GET(req: Request) {
 
     // Obtener los productos
     const products = await prisma.producto.findMany({
-      include: { imagenes: true },
+      include: { Imagen: true },
     });
 
     // Respuesta exitosa con datos y paginación

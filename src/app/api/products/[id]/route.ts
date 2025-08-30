@@ -13,7 +13,7 @@ export async function GET(
     // Busca el producto por id en la base de datos usando Prisma
     const product = await prisma.producto.findUnique({
       where: { id: Number(id) },
-      include: { imagenes: true },
+      include: { Imagen: true },
     });
 
     // Si no se encuentra el producto

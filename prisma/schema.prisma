@@ -3,31 +3,31 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Producto {
-  id               Int      @id @default(autoincrement())
-  nombre           String
+  id               Int       @id @default(autoincrement())
+  nombre           String    @db.VarChar(255)
   descripcion      String
   precio           Float
-  categoria        String
+  categoria        String    @db.VarChar(255)
   imagen_principal String
-  imagenes         Imagen[]
   calificacion     Float
   stock            Int
   oferta           Boolean
   descuento        Float
-  sku              String   @unique
-  fecha_creacion   DateTime @default(now())
+  sku              String    @unique @db.VarChar(255)
+  fecha_creacion   DateTime? @default(now()) @db.Timestamp(6)
   activo           Boolean
+  Imagen           Imagen[]
 }
 
 model Imagen {
   id         Int      @id @default(autoincrement())
   url        String
   orden      Int
-  productoId Int
-  producto   Producto @relation(fields: [productoId], references: [id])
+  productoid Int
+  Producto   Producto @relation(fields: [productoid], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
