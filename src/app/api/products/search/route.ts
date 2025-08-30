@@ -34,7 +34,7 @@ export async function GET(req: Request) {
       pagination: {
         page,
         limit,
-        total: filteredProducts.length,
+        total: Math.ceil(products.length / limit),
       },
     });
   } catch (error) {

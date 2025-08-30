@@ -24,6 +24,23 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className="flex-1 flex flex-col mt-3">
         {/* Nombre y categoría */}
         <h2 className="text-lg font-semibold text">{product.nombre}</h2>
+        <div className="flex items-center gap-1 mt-1">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <span
+              key={i}
+              className={
+                i < Math.round(product.calificacion)
+                  ? "text-yellow-400"
+                  : "text-gray-300"
+              }
+            >
+              ★
+            </span>
+          ))}
+          <span className="ml-1 text-xs text-gray-500">
+            {product.calificacion.toFixed(1)}
+          </span>
+        </div>
         <p className="text-gray-500 text-sm">{product.categoria}</p>
         {/* Precio y descuento si aplica */}
         <div className="mt-2 flex items-center gap-2">
