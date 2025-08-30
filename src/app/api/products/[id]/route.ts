@@ -1,12 +1,9 @@
 import { NextResponse } from "next/server";
 import products from "@/Data.json";
 
-export async function GET(
-  _req: Request,
-  { params }: { params: { id: number } }
-) {
+export async function GET(req: Request, context: { params: { id: string } }) {
   try {
-    const id = params.id;
+    const id = Number(context.params.id);
     const product = products.find((item) => item.id === id);
 
     return NextResponse.json({
